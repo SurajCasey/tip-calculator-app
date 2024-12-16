@@ -1,0 +1,43 @@
+@use '../util' as u;
+
+
+
+h1 {
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0;
+}
+
+
+//Test align, font size, line height, color, font -weight, line height
+//line spacing
+
+.calculator{
+    &__label{
+        font-size: 1rem;
+        color: var(--dark-grayish-cyan);
+    }
+}
+
+.results{
+    &__title{
+        font-size: 1rem;
+        color: var(--white);
+        margin: 0;
+    }
+
+    &__value{
+        font-size: u.rem(48);
+        margin: 0;
+        color: var(--strong-cyan);
+        @include u.breakpoint-down(medium){
+            font-size: u.rem(32);
+        }
+    }
+}
+
+span{
+    color: hsl(183, 15%, 56%);
+    font-size: u.rem(13);
+}
+

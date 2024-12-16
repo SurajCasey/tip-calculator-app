@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip Calculator App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./dist/style.css">
+</head>
+<body class="app">
+  <main class="main">
+    <header class="header">
+      <img src="./images/logo.svg" alt="splitter logo">
+    </header>
+    
+    <section class="calculator">
+      <div class="calculator__input">
+        <div class="calculator__group">
+          <label for="bill-amount" class="calculator__label">Bill</label> <br>
+          <input type="number" id="bill-amount" name="bill-amount" class="calculator__input-field" placeholder="0" min="0">
+        </div>
+
+        <div class="calculator__group">
+          <label class="calculator__label">Select Tip %</label>
+          <div class="calculator__button-group">
+            <button class="calculator__button" id="five">5%</button>
+            <button class="calculator__button" id="ten">10%</button>
+            <button class="calculator__button" id="fifteen">15%</button>
+            <button class="calculator__button" id="twentyfive">25%</button>
+            <button class="calculator__button" id="fifty">50%</button>
+            <input type="number" id="custom" class="calculator__input-field calculator__input-field--custom" placeholder="Custom" min="0">
+          </div>
+        </div>
+
+        <div class="calculator__group">
+          <label for="number-of-people" class="calculator__label"> 
+            Number of People 
+            <span id="error-message" >Can't be zero</span>
+          </label> <br>
+          <input type="number" id="number-of-people" name="number-of-people" class="calculator__input-field" placeholder="0" min="1">
+        </div>
+      </div>
+  
+      <div class="calculator__results">
+        <div class="results__amounts">
+          <div class="results__group">
+            <h1 class="results__title">Tip Amount <br><span>/ person</span> </h1>
+            <p id="tip-amount-value" class="results__value">$0.00</p>
+          </div>
+          <div class="results__group">
+            <h1 class="results__title">Total <br><span>/ person</span> </h1>
+            <p id="total-amount-value" class="results__value">$0.00</p>
+          </div>
+        </div>
+        <button id="reset" class="results__reset">RESET</button>
+      </div>
+    </section>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+</html>

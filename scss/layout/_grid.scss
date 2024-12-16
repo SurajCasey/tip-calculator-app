@@ -1,0 +1,112 @@
+@use '../util' as u;
+
+body{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    
+}
+
+.header{
+    text-align: center;
+    margin-bottom: u.rem(87.86);
+    @include u.breakpoint-down(medium){
+        margin-top: u.rem(50);
+        margin-bottom: u.rem(40);
+    }
+}
+
+.calculator{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: u.rem(48);
+    border-radius: u.rem(25);
+    background-color: var(--white);
+
+    @include u.breakpoint-down(medium){
+        display: grid;
+        grid-template-columns: auto;
+        gap: 0;
+    }
+
+    &__input{
+        max-width: u.rem(379);
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, auto);
+        gap: u.rem(40);
+        margin: u.rem(48);
+        margin-right: 0;
+        @include u.breakpoint-down(medium){
+            max-width: u.rem(311);
+            
+            gap: u.rem(32);
+        }
+    }
+
+    &__input-field{
+        width: 100%;
+        height: u.rem(48);
+    }
+
+    &__button{
+        background-color: var(--very-dark-cyan);
+        color: var(--white);
+        border-radius: u.rem(5);
+    }
+    &__button-group{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, u.rem(48));
+        gap: u.rem(14) u.rem(16);
+        @include u.breakpoint-down(medium){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+
+    // results part
+    &__results{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: u.rem(32);
+        margin-left: 0;
+        padding: u.rem(40);
+        background-color: var(--very-dark-cyan);
+        border-radius: u.rem(15);
+        @include u.breakpoint-down(medium){
+            width: u.rem(327);
+            margin: u.rem(32);
+            margin-top: 0;
+            gap: u.rem(32);
+            padding: u.rem(32) u.rem(22) u.rem(24) u.rem(24);
+        }
+    }
+    
+  
+}
+
+.results{
+
+    &__group{
+        max-height: u.rem(71);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+#error-message{
+    display: none;
+    color: hsl(13, 70%, 61%); 
+    margin-left: 5.875rem;
+    @include u.breakpoint-down(medium){
+        margin-left: 2.3rem;
+    }
+}
+
+

@@ -1,0 +1,79 @@
+@use '../util' as u;
+
+
+#reset:hover{
+    background-color: var(--strong-cyan);
+}
+#reset{
+   width: u.rem(333);
+   height: u.rem(45);
+   align-self: center;
+   background-color: hsl(183, 78%, 24%);
+   border-radius: u.rem(5);
+   border: none;
+   color: var(--very-dark-cyan);
+   font-size: u.rem(20);
+   @include u.breakpoint-down(medium){
+    width: u.rem(281);
+   } 
+}
+
+// for other browsers
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// firefox
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.calculator{
+    &__button-group{
+        margin-top: u.rem(6);
+    }
+
+    &__button{
+        font-family: u.$font;
+        font-size: u.rem(24);
+        border: none;
+    }
+
+    &__input-field{
+            font-family: u.$font;
+            font-weight: 700;
+            font-size: u.rem(24);
+            text-align: right;
+            color: var(--very-dark-cyan);
+            background-color: hsl(185, 38%, 97%);
+            border: none;
+
+            &::placeholder{
+                opacity: 35%;
+            }
+
+            &--custom{
+                text-align: center;
+                &::placeholder{
+                    opacity: 100%;
+                }
+            }
+        }
+}
+
+
+#bill-amount{
+    background: url('../../images/icon-dollar.svg') no-repeat left;
+    background-position: u.rem(17) center;
+    background-color: hsl(185, 38%, 97%);
+    padding: u.rem(17);
+}
+
+#number-of-people{
+    background: url('../../images/icon-person.svg') no-repeat left;
+    background-position: u.rem(17) center;
+    background-color: hsl(185, 38%, 97%);
+    padding: u.rem(17);
+}
